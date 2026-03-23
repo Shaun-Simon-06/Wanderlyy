@@ -24,19 +24,14 @@ body {
     top: 0;
     left: 0;
     z-index: 1000;
-    
-    /* Default: Transparent Black Shade */
     background-color: rgba(0, 0, 0, 0.5); 
     backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
     
-    /* Subtle Dark Border */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    /* REMOVE THIS LINE BELOW */
+    /* overflow: hidden; */ 
     
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    /*overflow: hidden;*/
 }
-
 .nav-link {
     color: #ffffff; /* Default White Text */
     text-decoration: none;
@@ -491,7 +486,7 @@ html {
 @media (max-width: 768px) {
     .hamburger {
         display: flex; /* Show the menu icon */
-        z-index: 1001;
+        z-index: 1003;
     }
 
     .nav-menu {

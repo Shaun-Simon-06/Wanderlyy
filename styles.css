@@ -338,6 +338,16 @@ footer .container {
     color: #ff6b6b;
 }
 
+
+
+html {
+  scroll-behavior: smooth;
+}
+/* Ensure the footer container centers everything */
+footer .container {
+    text-align: center;
+    padding: 40px 0;
+}
 /* Premium Floating Back to Top */
 .back-to-top {
     position: fixed;
@@ -379,15 +389,6 @@ footer .container {
 .back-to-top:hover {
     background-color: #555;
     color: #ffd700; /* Subtle gold accent */
-}
-
-html {
-  scroll-behavior: smooth;
-}
-/* Ensure the footer container centers everything */
-footer .container {
-    text-align: center;
-    padding: 40px 0;
 }
 
 /* Animations */

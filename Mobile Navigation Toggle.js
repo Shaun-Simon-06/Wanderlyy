@@ -1,13 +1,14 @@
 // Mobile Navigation Toggle
+
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
 hamburger.addEventListener("click", () => {
+    // 1. Toggle the classes
     hamburger.classList.toggle("active");
     navMenu.classList.toggle("active");
-});
 
-// Animate hamburger icon
+    // 2. Animate hamburger icon (Moved inside the click listener)
     const spans = hamburger.querySelectorAll('span');
     if (navMenu.classList.contains('active')) {
         spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
@@ -18,7 +19,7 @@ hamburger.addEventListener("click", () => {
         spans[1].style.opacity = '1';
         spans[2].style.transform = 'none';
     }
-});
+}); // This now correctly closes the entire click event
 
 // Close mobile menu when clicking on a link
 const navLinks = document.querySelectorAll('.nav-link');

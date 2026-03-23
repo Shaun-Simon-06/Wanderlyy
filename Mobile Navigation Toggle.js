@@ -50,10 +50,26 @@ navLinks.forEach(link => {
 // Navbar background change on scroll
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+    if (window.scrollY > 50) {
+        // Opaque Black when scrolling
+        navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
+        navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.5)';
     } else {
-        navbar.style.backgroundColor = '#fff';
+        // Transparent Black Shade when at the top
+        navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.3)';
+        navbar.style.boxShadow = 'none';
+    }
+});
+
+const navbar = document.querySelector('.navbar');
+
+navbar.addEventListener('mouseenter', () => {
+    navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
+});
+
+navbar.addEventListener('mouseleave', () => {
+    if (window.scrollY <= 50) {
+        navbar.style.backgroundColor = 'rgba(0, 0, 0, 0.3)';
     }
 });
 

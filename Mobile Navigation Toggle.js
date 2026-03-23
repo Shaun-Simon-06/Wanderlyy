@@ -1,22 +1,19 @@
 // Mobile Navigation Toggle
 
-// Mobile Navigation Toggle
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
 hamburger.addEventListener("click", () => {
-    // This is all you need! 
-    // It triggers the .active styles you already wrote in your CSS
+    // This triggers the CSS classes you already defined
     hamburger.classList.toggle("active");
     navMenu.classList.toggle("active");
 });
 
-// Close mobile menu when clicking on a link
-const navLinks = document.querySelectorAll('.nav-link');
-navLinks.forEach(link => {
+// Close menu when a link is clicked
+document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
-        hamburger.classList.remove('active'); // Reset the hamburger icon
-        navMenu.classList.remove('active');    // Hide the menu
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
     });
 });
 

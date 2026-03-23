@@ -39,10 +39,14 @@ body {
     font-size: 1.8rem;
 }
 
+/* Add this inside your @media query for better mobile behavior */
 .nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
+    display: none; /* Hide by default on mobile */
+}
+
+.nav-menu.active {
+    display: flex; /* Show only when active */
+    left: 0;
 }
 
 .nav-link {

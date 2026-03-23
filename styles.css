@@ -338,6 +338,31 @@ footer .container {
     color: #ff6b6b;
 }
 
+/* The Button Style */
+.back-to-top {
+    display: inline-block;
+    background-color: #333; /* Dark gray to match most footers */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease; /* Smooth color change */
+}
+
+/* Change color when hovering */
+.back-to-top:hover {
+    background-color: #555;
+    color: #ffd700; /* Subtle gold accent */
+}
+
+/* Ensure the footer container centers everything */
+footer .container {
+    text-align: center;
+    padding: 40px 0;
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {

@@ -19,24 +19,27 @@ body {
 
 /* Navbar */
 .navbar {
-    /* Lowered from 0.8 to 0.4 for much more transparency */
-    background-color: rgba(255, 255, 255, 0.4); 
-    
-    /* Increased blur to 20px to keep it sophisticated and readable */
-    backdrop-filter: blur(20px); 
-    -webkit-backdrop-filter: blur(20px);
-    
-    /* A very faint border-bottom keeps the structure visible */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
-    
-    /* A much softer, larger shadow so it feels like it's floating */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    /* Initial State: Very Transparent */
+    background-color: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    transition: background-color 0.4s ease, padding 0.4s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
+    
+    /* Smooth transition for the background and shadow */
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover State: Becomes Opaque */
+.navbar:hover {
+    background-color: rgba(255, 255, 255, 0.98); /* Nearly solid white */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); /* Stronger shadow when opaque */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Darker border for definition */
 }
 
 .navbar .container {

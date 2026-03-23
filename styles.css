@@ -39,14 +39,10 @@ body {
     font-size: 1.8rem;
 }
 
-/* Add this inside your @media query for better mobile behavior */
 .nav-menu {
-    display: none; /* Hide by default on mobile */
-}
-
-.nav-menu.active {
-    display: flex; /* Show only when active */
-    left: 0;
+    display: flex;
+    list-style: none;
+    gap: 2rem;
 }
 
 .nav-link {
@@ -340,46 +336,6 @@ footer .container {
 
 .social-links a:hover {
     color: #ff6b6b;
-}
-
-
-
-html {
-  scroll-behavior: smooth;
-}
-/* Ensure the footer container centers everything */
-footer .container {
-    text-align: center;
-    padding: 40px 0;
-}
-/* Premium Floating Back to Top */
-.back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    background-color: #fff;
-    color: #2d3436; /* Dark charcoal */
-    border: 1px solid #eee;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    z-index: 999;
-}
-
-/* Sophisticated Hover Effect */
-.back-to-top:hover {
-    background-color: #2d3436; /* Flips to dark */
-    color: #c5a059; /* Accent gold */
-    transform: translateY(-5px); /* Elegant lift */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    border-color: #c5a059;
 }
 
 /* Animations */

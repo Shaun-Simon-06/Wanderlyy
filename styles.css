@@ -378,19 +378,6 @@ footer .container {
     border-color: #c5a059;
 }
 
-/* Using a pseudo-element for an arrow if you aren't using an icon library */
-.back-to-top::before {
-    content: '↑';
-    font-family: serif;
-    font-weight: 300;
-}
-
-/* Change color when hovering */
-.back-to-top:hover {
-    background-color: #555;
-    color: #ffd700; /* Subtle gold accent */
-}
-
 /* Animations */
 @keyframes fadeInUp {
     from {

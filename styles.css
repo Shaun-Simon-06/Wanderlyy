@@ -25,7 +25,7 @@ body {
     margin: 20px auto;      /* Spacing from the top and center it */
     left: 0;
     right: 0;
-    border-radius: 50px;    /* The "Pill" shape */
+    border-radius: 25px;    /* The "Pill" shape */
     
     /* 2. Glassmorphism Base */
     background-color: rgba(255, 255, 255, 0.2); 

@@ -1,12 +1,24 @@
 // Mobile Navigation Toggle
 
+// Mobile Navigation Toggle
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
 hamburger.addEventListener("click", () => {
-    // 1. Toggle the classes
+    // This is all you need! 
+    // It triggers the .active styles you already wrote in your CSS
     hamburger.classList.toggle("active");
     navMenu.classList.toggle("active");
+});
+
+// Close mobile menu when clicking on a link
+const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active'); // Reset the hamburger icon
+        navMenu.classList.remove('active');    // Hide the menu
+    });
+});
 
     // 2. Animate hamburger icon (Moved inside the click listener)
     const spans = hamburger.querySelectorAll('span');
@@ -21,17 +33,7 @@ hamburger.addEventListener("click", () => {
     }
 }); // This now correctly closes the entire click event
 
-// Close mobile menu when clicking on a link
-const navLinks = document.querySelectorAll('.nav-link');
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        const spans = hamburger.querySelectorAll('span');
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
-    });
-});
+
 
 // Smooth scrolling for navigation links
 navLinks.forEach(link => {

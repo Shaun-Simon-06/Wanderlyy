@@ -341,7 +341,7 @@ footer .container {
 /* The Button Style */
 .back-to-top {
     display: inline-block;
-    background-color: #333; /* Dark gray to match most footers */
+    background-color: #fffcfc; /* Dark gray to match most footers */
     color: white;
     padding: 10px 20px;
     text-decoration: none;

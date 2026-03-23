@@ -50,7 +50,7 @@ body {
 
 /* 5. Adjust the container padding for the rounded edges */
 .navbar .container {
-    padding: 0.6rem 35px;    /* More horizontal padding to match the curve */
+    padding: 0.6rem 60px;    /* More horizontal padding to match the curve */
 }
 
 .logo h1 {

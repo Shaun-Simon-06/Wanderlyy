@@ -92,7 +92,7 @@ body {
     display: flex;
     justify-content: space-between; /* Logo left, Menu right */
     align-items: center;
-    padding: 0.7rem 40px;
+    padding: 0.5rem 40px;
 }
 
 .nav-menu {

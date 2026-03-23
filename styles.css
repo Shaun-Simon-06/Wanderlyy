@@ -70,10 +70,6 @@ body {
     transform: translateY(5px) scale(1.01); /* Adds a tiny "pop" scale */
 }
 
-/* 5. Adjust the container padding for the rounded edges */
-.navbar .container {
-    padding: 0.6rem 60px;    /* More horizontal padding to match the curve */
-}
 
 .logo h1 {
     color: #a82525;
@@ -92,12 +88,31 @@ body {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother animation curve */
 }
 
+
+.navbar .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    /* This pushes the logo to the left and the nav-menu to the right */
+    justify-content: space-between; 
+    align-items: center;
+    padding: 1.2rem 40px;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 2.5rem; /* Increased gap for a more premium, airy feel */
+    margin-left: auto; /* Extra insurance to push it to the right */
 }
 
+/* Ensure the hamburger icon stays on the right for mobile */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+        margin-left: auto; 
+    }
+}
 
 
 .nav-menu li {

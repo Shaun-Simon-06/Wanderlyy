@@ -529,7 +529,13 @@ html {
     }
     
     .hamburger span {
-        background-color: #fff; /* Ensure bars are white on the dark nav */
+        background-color: #fff; /* This makes the three lines white */
+    }
+    
+    /* Add this to your CSS to ensure the blur stays active */
+    .navbar {
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
     }
 }
 

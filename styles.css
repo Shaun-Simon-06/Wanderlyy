@@ -357,6 +357,9 @@ footer .container {
     color: #ffd700; /* Subtle gold accent */
 }
 
+html {
+  scroll-behavior: smooth;
+}
 /* Ensure the footer container centers everything */
 footer .container {
     text-align: center;

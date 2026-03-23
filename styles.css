@@ -25,76 +25,72 @@ body {
     left: 0;
     z-index: 1000;
     
-    /* Base Glassmorphism */
-    background-color: rgba(255, 255, 255, 0.15); /* Very transparent */
+    /* Default: Transparent Black Shade */
+    background-color: rgba(0, 0, 0, 0.3); 
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     
-    /* Subtle separation from content */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
+    /* Subtle Dark Border */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     
-    /* Smooth transition for hover effects */
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden; /* Contains the glow shimmer */
+    overflow: hidden;
 }
 
+.nav-link {
+    color: #ffffff; /* Default White Text */
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    opacity: 0.9; /* Slightly softer white for a premium feel */
+    transition: all 0.3s ease;
+}
+
+.logo h1 {
+    color: #ffffff; /* Keep Logo White to match */
+    font-size: 1.8rem;
+    transition: transform 0.3s ease;
+}
 /* The Glow Layer */
+/* The Shimmer Effect (White glint on Dark background) */
 .navbar::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -100%; /* Start off-screen */
-    width: 50%;
+    left: -100%;
+    width: 30%;
     height: 100%;
     background: linear-gradient(
         90deg,
         transparent,
-        rgba(255, 255, 255, 0.4), /* The "shimmer" color */
+        rgba(255, 255, 255, 0.15), /* Subtle white light */
         transparent
     );
-    transition: none; /* We want this to be a sharp animation */
-    pointer-events: none; /* Ensures the glow doesn't block clicks */
+    pointer-events: none;
 }
 
-/* The Hover Animation */
 .navbar:hover::before {
-    left: 150%; /* Sweep across the bar */
+    left: 120%;
     transition: all 0.8s ease-in-out;
 }
 
-/* Subtle Border Highlight */
+/* Hover: Opaque Black */
 .navbar:hover {
-    border: 1px solid rgba(255, 255, 255, 0.5); /* Brightens the edge on hover */
-    background-color: rgba(255, 255, 255, 0.95);
-    transform: translateY(5px) scale(1.01); /* Adds a tiny "pop" scale */
+    background-color: rgba(0, 0, 0, 0.95); /* Deep Opaque Black */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-
-.logo h1 {
-    color: #a82525;
-    font-size: 1.6rem; /* Slightly smaller is often more elegant */
-    letter-spacing: -0.5px; /* Tighter kerning for a "branded" look */
-    font-weight: 700;
-    text-transform: uppercase; /* Optional: adds a formal touch */
+.navbar:hover .nav-link {
+    opacity: 1;
+    color: #ff6b6b; /* Optional: A highlight color for the active links on black */
 }
-
-.nav-link {
-    color: #2d3436;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem; /* Slightly smaller text feels more sophisticated */
-    letter-spacing: 0.2px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Smoother animation curve */
-}
-
 
 .navbar .container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
-    /* This pushes the logo to the left and the nav-menu to the right */
-    justify-content: space-between; 
+    justify-content: space-between; /* Logo left, Menu right */
     align-items: center;
     padding: 1.2rem 40px;
 }
@@ -102,8 +98,8 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2.5rem; /* Increased gap for a more premium, airy feel */
-    margin-left: auto; /* Extra insurance to push it to the right */
+    gap: 2.5rem;
+    margin-left: auto;
 }
 
 /* Ensure the hamburger icon stays on the right for mobile */

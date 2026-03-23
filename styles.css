@@ -19,15 +19,24 @@ body {
 
 /* Navbar */
 .navbar {
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent */
-    backdrop-filter: blur(10px); /* Modern frosted glass look */
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03); /* Softer, wider shadow */
+    /* Lowered from 0.8 to 0.4 for much more transparency */
+    background-color: rgba(255, 255, 255, 0.4); 
+    
+    /* Increased blur to 20px to keep it sophisticated and readable */
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px);
+    
+    /* A very faint border-bottom keeps the structure visible */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+    
+    /* A much softer, larger shadow so it feels like it's floating */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Very thin elegant border */
+    transition: background-color 0.4s ease, padding 0.4s ease;
 }
 
 .navbar .container {
@@ -134,27 +143,36 @@ body {
 .cta-button {
     padding: 16px 45px;
     font-size: 1rem;
-    letter-spacing: 1px; /* Spacing text makes it feel more "editorial" */
-    text-transform: uppercase; 
-    background: linear-gradient(135deg, #a82525 0%, #8b1d1d 100%);
-    color: #fff;
-    border: none;
-    border-radius: 4px; /* Slightly sharper corners often feel more modern/premium than pills */
-    cursor: pointer;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
     font-weight: 600;
+    cursor: pointer;
     position: relative;
     overflow: hidden;
-    /* Soft, multi-layered shadow */
-    box-shadow: 0 4px 15px rgba(168, 37, 37, 0.3), 
-                0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    
+    /* Transparency & Blur */
+    background: rgba(255, 255, 255, 0.1); /* Very light white tint */
+    backdrop-filter: blur(10px); /* Blurs the hero image behind it */
+    -webkit-backdrop-filter: blur(10px);
+    
+    /* Border gives it definition against the background */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    
+    /* Soft shadow to lift it off the image */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 .cta-button:hover {
-    background: linear-gradient(135deg, #c02d2d 0%, #a82525 100%);
-    transform: translateY(-4px);
-    /* Increase shadow depth on hover */
-    box-shadow: 0 12px 25px rgba(168, 37, 37, 0.4);
+    /* Transitions to your brand color but keeps some transparency */
+    background: rgba(168, 37, 37, 0.8); 
+    border-color: rgba(168, 37, 37, 1);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(168, 37, 37, 0.4);
 }
+
+
 
 /* The "Sheen" Effect */
 .cta-button::before {
@@ -179,6 +197,16 @@ body {
 .cta-button:active {
     transform: translateY(-1px);
     box-shadow: 0 5px 10px rgba(168, 37, 37, 0.3);
+}
+/* Optional: Add a subtle glow inside on hover */
+.cta-button:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, transparent 70%);
 }
 
 /* Destinations Section */

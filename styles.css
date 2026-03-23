@@ -39,13 +39,35 @@ body {
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 4. The Opaque Hover State */
+/* The Glow Layer */
+.navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; /* Start off-screen */
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4), /* The "shimmer" color */
+        transparent
+    );
+    transition: none; /* We want this to be a sharp animation */
+    pointer-events: none; /* Ensures the glow doesn't block clicks */
+}
+
+/* The Hover Animation */
+.navbar:hover::before {
+    left: 150%; /* Sweep across the bar */
+    transition: all 0.8s ease-in-out;
+}
+
+/* Subtle Border Highlight */
 .navbar:hover {
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Brightens the edge on hover */
     background-color: rgba(255, 255, 255, 0.95);
-    width: 92%;              /* Slight expansion makes it feel "alive" */
-    transform: translateY(5px); /* Gentle dip on hover */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    transform: translateY(5px) scale(1.01); /* Adds a tiny "pop" scale */
 }
 
 /* 5. Adjust the container padding for the rounded edges */

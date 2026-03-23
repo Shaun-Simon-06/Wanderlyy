@@ -64,8 +64,27 @@ body {
 
 
 
+.nav-menu li {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #a82525; /* Matches your logo color */
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
 .nav-link:hover {
-    color: #ff6b6b;
+    color: #a82525; /* Use the brand color instead of a bright red */
 }
 
 .hamburger {

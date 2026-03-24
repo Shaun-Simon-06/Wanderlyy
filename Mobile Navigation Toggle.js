@@ -68,10 +68,6 @@ window.addEventListener('scroll', () => {
         navbar.style.boxShadow = 'none';
     }
 });
-window.addEventListener('mousemove', e => {
-    document.documentElement.style.setProperty('--x', e.clientX + 'px');
-    document.documentElement.style.setProperty('--y', e.clientY + 'px');
-});
 
 const navbar = document.querySelector('.navbar');
 
@@ -186,6 +182,14 @@ window.addEventListener('load', () => {
         heroContent.style.opacity = '1';
         heroContent.style.transform = 'translateY(0)';
     }, 100);
+});
+// Add this to the very end of script.js
+window.addEventListener('mousemove', (e) => {
+    const overlay = document.getElementById('cursor-overlay');
+    if (overlay) {
+        overlay.style.setProperty('--x', e.clientX + 'px');
+        overlay.style.setProperty('--y', e.clientY + 'px');
+    }
 });
 
 console.log('Wanderlust Travel Blog loaded successfully!');

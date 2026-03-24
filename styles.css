@@ -3,20 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-#cursor-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: radial-gradient(
-        600px circle at var(--x, 50%) var(--y, 50%), 
-        rgba(255, 107, 107, 0.08), 
-        transparent 80%
-    );
-    pointer-events: none; /* So you can still click buttons */
-    z-index: -1; /* Keep it behind your content */
-}
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -29,6 +15,27 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+#cursor-overlay {
+    /* 1. Make it cover the whole screen and stay put */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    /* 2. Create the light circle */
+    /* 600px is the size of the glow. var(--x) is the horizontal position */
+    background: radial-gradient(
+        600px circle at var(--x, 50%) var(--y, 50%), 
+        rgba(255, 107, 107, 0.1), /* Center color (your brand red at 10% opacity) */
+        transparent 80%           /* Fades out to nothing */
+    );
+
+    /* 3. Performance and Layering */
+    pointer-events: none; /* Crucial: allows you to click buttons "through" the glow */
+    z-index: -1;          /* Keeps it behind your text and images */
+    transition: background 0.05s ease; /* Makes the movement feel smoother */
 }
 
 /* Navbar */

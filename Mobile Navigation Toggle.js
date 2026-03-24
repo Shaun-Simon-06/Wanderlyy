@@ -1,38 +1,24 @@
 // Mobile Navigation Toggle
-
+// 1. Select Elements
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
+const navLinks = document.querySelectorAll('.nav-link'); // Added missing definition
 
+// 2. Mobile Navigation Toggle
 hamburger.addEventListener("click", () => {
-    // This triggers the CSS classes you already defined
     hamburger.classList.toggle("active");
     navMenu.classList.toggle("active");
 });
 
-// Close menu when a link is clicked
-document.querySelectorAll('.nav-link').forEach(link => {
+// 3. Close menu when a link is clicked
+navLinks.forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
     });
 });
 
-    // 2. Animate hamburger icon (Moved inside the click listener)
-    const spans = hamburger.querySelectorAll('span');
-    if (navMenu.classList.contains('active')) {
-        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-        spans[1].style.opacity = '0';
-        spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-    } else {
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
-    }
-}); // This now correctly closes the entire click event
-
-
-
-// Smooth scrolling for navigation links
+// 4. Smooth scrolling for navigation links
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
         e.preventDefault();
@@ -48,6 +34,26 @@ navLinks.forEach(link => {
         }
     });
 });
+
+// ... Keep the rest of your scroll and observer code below ...
+
+
+    // 2. Animate hamburger icon (Moved inside the click listener)
+const spans = hamburger.querySelectorAll('span');
+    if (navMenu.classList.contains('active')) {
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+    } else {
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+    }
+}); // This now correctly closes the entire click event
+
+
+
+
 
 // Navbar background change on scroll
 window.addEventListener('scroll', () => {
